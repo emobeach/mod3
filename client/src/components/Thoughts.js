@@ -30,6 +30,19 @@ function Thoughts(){
         const { name, value } = e.target;
         setSelectedThought({...selectedThought, [name]: value })
     }
+    function handleSubmit(e) {
+        e.preventDefault()
+        createThought()
+    }
+
+    async function createThought() {
+        try {
+            const res = await axios.post(BASE_URL, selectedThought)
+            setThoughts([res.data])
+        } catch(e) {
+            console.error(e, e.message)
+        }
+    }
 
     async function editThought(e) {
         e.preventDefault();

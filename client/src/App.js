@@ -8,15 +8,13 @@ import './App.css';
   Link
 } from "react-router-dom";
 */
-import Thought from './components/Thought'
+import Thoughts from './components/Thoughts'
 
 
 class App extends React.Component {
   render(){
     return (
-      <div className="App">
-      <Thought />
-    </div>
+      <Thoughts /> 
     )
   }
 }
